@@ -19,7 +19,9 @@ class MainVcCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        mainView.layer.cornerRadius = 15
+//        mainView.layer.cornerRadius = 15
+//      
+       
        
     }
 

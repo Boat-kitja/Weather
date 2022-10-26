@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol RefreshDataMainDelegate {
+  func refreshDataMain()
+}
+
 class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let tableView:UITableView = {
@@ -17,6 +21,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     let places = Country()
     var search = [String]()
+    var delegate:RefreshDataMainDelegate?
     
     
     override func viewDidLoad() {
@@ -48,7 +53,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
         for i in places.countryList {
             if i.lowercased().contains(text.lowercased()){
                 search.append(i)
-                print(search)
+//                print(search)
             }
         }
         tableView.reloadData()
@@ -72,7 +77,8 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        if let vc = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as? DetailVC{
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let vc = storyboard.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
+        let vc = storyboard.instantiateViewController(withIdentifier: "DetailVCFromSeatch") as! DetailVCFromSearch
+        vc.delegate = self
         vc.passDataFromApiCall(name: search[indexPath.row])
        
         present(vc, animated: true, completion: nil)
@@ -82,8 +88,12 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
 }
+
+extension ResultsViewController:RefreshDataDelegate{
+    func refreshData() {
+        delegate?.refreshDataMain()
+    }
     
-    
-    
+}
     
 

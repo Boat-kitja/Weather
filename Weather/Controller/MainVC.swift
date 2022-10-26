@@ -7,11 +7,13 @@
 
 import UIKit
 
-class MainVC: UIViewController {
+class MainVC: UIViewController{
+   
     @IBOutlet weak var tableView: UITableView!
     let searchController = UISearchController(searchResultsController: ResultsViewController())
     let api = APIManger()
-    var data = [CityName?]()
+//    var data = [CityName?]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,81 +25,39 @@ class MainVC: UIViewController {
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white], for: .normal)
 
         title = "Weather"
-        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "MainVcCell", bundle: nil), forCellReuseIdentifier: "MainVcCell")
-        fetchDataFromApi()
-        fetchDataFromApi2()
-        fetchDataFromApi3()
-        fetchDataFromApi4()
-        fetchDataFromApi5()
     }
     
-    func fetchDataFromApi(){
-        api.LatAndLon(cityName: "paris") { city in
-            self.data.append(city)
-            DispatchQueue.main.async {
-                
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-    func fetchDataFromApi2(){
-        api.LatAndLon(cityName: "london") { city in
-            self.data.append(city)
-            DispatchQueue.main.async {
-               
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-    func fetchDataFromApi3(){
-        api.LatAndLon(cityName: "bangkok") { city in
-            self.data.append(city)
-            DispatchQueue.main.async {
-              
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-    func fetchDataFromApi4(){
-        api.LatAndLon(cityName: "tokyo") { city in
-            self.data.append(city)
-            DispatchQueue.main.async {
-             
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-    func fetchDataFromApi5(){
-        api.LatAndLon(cityName: "hanoi") { city in
-            self.data.append(city)
-            DispatchQueue.main.async {
-               
-                self.tableView.reloadData()
-            }
+    @IBAction func editTableView() {
+     
+        if tableView.isEditing{
+            tableView.isEditing = false
+        }else{
+            tableView.isEditing = true
         }
     }
 }
 
 extension MainVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        data.count
+        CityDataForMainView.shared.cirysData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainVcCell", for: indexPath) as! MainVcCell
-        if let data = data[indexPath.row] {
-            cell.tempLabel.text = "\(Int((data.main.temp!.rounded(.down))))°"
-            cell.nameLabel.text = data.name
-            cell.codeLabel.text = data.weather[0].description!.capitalized
-            cell.hTempLabel.text =  "H: \(Int((data.main.temp_max!.rounded(.down))))"
-            cell.lTempLabel.text =  "L: \(Int((data.main.temp_min!.rounded(.down))))"
+//        
+//        cell.contentView.superview?.backgroundColor = .black
+//        cell.contentView.superview?.
+        if let
+            data = CityDataForMainView.shared.cirysData[indexPath.row]{
+            
+            cell.tempLabel.text = "\(Int(((data.firstSection?.main.temp!.rounded(.down))!)))°"
+            cell.nameLabel.text = data.firstSection?.name
+            cell.codeLabel.text = data.firstSection!.weather[0].description!.capitalized
+            cell.hTempLabel.text =  "H: \(Int((data.firstSection! .main.temp_max!.rounded(.down))))"
+            cell.lTempLabel.text =  "L: \(Int((data.firstSection!.main.temp_min!.rounded(.down))))"
 
         }
         return cell
@@ -105,16 +65,86 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
-        vc.passDataFromApiCall(name: data[indexPath.row]!.name)
-        self.present(vc, animated: true
-        )
+        let test = CityDataForMainView.shared.cirysData[indexPath.row]?.firstSection?.name
+        let inDexForDetailViewToSwipe = CityDataForMainView.shared.cirysData.firstIndex(where: {$0?.firstSection?.name == test })
+        vc.indexForAllWeatherData = inDexForDetailViewToSwipe
+        
+        print("what i want\(vc.indexForAllWeatherData)")
+        
+        print("what i want\(inDexForDetailViewToSwipe)")
+        vc.modalPresentationStyle = .fullScreen 
+        self.present(vc, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+            return true
+        }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+            let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, complete in
+                let potato = CityDataForMainView.shared.cirysData[indexPath.row]
+                CityDataForMainView.shared.cirysData.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                
+                for i in CityDataForMainView.shared.cirysData.indices{
+                    if CityDataForMainView.shared.cirysData[i]!.index > potato!.index{
+                        CityDataForMainView.shared.cirysData[i]!.index = CityDataForMainView.shared.cirysData[i]!.index - 1
+                    }
+                }
+                complete(true)
+            }
+        deleteAction.backgroundColor = .red
+        
+        
+                
+                let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+                configuration.performsFirstActionWithFullSwipe = true
+                return configuration
+    }
+        
+        func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+                let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { _, _ in
+
+                    CityDataForMainView.shared.cirysData.remove(at: indexPath.row)
+
+                    self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                }
+                deleteAction.backgroundColor = .red
+
+                return [deleteAction]
+            }
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+            return true
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        CityDataForMainView.shared.cirysData.swapAt(sourceIndexPath.row, destinationIndexPath.row)
+    }
+    
+//    private func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+//        cell.backgroundColor = .red
+//    }
 }
 
 extension MainVC:UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let query = searchController.searchBar.text!
         let vc = searchController.searchResultsController as? ResultsViewController
+        vc?.delegate = self
         vc?.filterArray(text: query)
     }
+}
+
+extension MainVC:RefreshDataMainDelegate{
+    func refreshDataMain() {
+        tableView.reloadData()
+    }
+    
+   
+    
+    
 }

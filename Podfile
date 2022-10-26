@@ -7,6 +7,5 @@ target 'Weather' do
 
   # Pods for Weather
 pod 'Kingfisher', '~> 7.0'
-pod 'GoogleMaps', '~> 7.1.0'
 
 end

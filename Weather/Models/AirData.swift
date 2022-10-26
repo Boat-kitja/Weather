@@ -17,7 +17,7 @@ struct Welcome: Codable {
 // MARK: - DataClass
 struct DataClass: Codable {
     let city, state, country: String
-    let location: Location
+//    let location: Location
     let current: Current
 }
 
@@ -29,11 +29,11 @@ struct Current: Codable {
 
 // MARK: - Pollution
 struct Pollution: Codable {
-    let ts: String
+//    let ts: String
     let aqius: Int
-    let mainus: String
-    let aqicn: Int
-    let maincn: String
+//    let mainus: String
+//    let aqicn: Int
+//    let maincn: String
 }
 
 // MARK: - Weather
@@ -46,7 +46,7 @@ struct Weather: Codable {
 }
 
 // MARK: - Location
-struct Location: Codable {
-    let type: String
-    let coordinates: [Double]
-}
+//struct Location: Codable {
+//    let type: String
+//    let coordinates: [Double]
+//}

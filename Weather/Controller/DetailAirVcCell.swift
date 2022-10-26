@@ -9,12 +9,16 @@ import UIKit
 
 class DetailAirVcCell: UITableViewCell {
 
-    @IBOutlet weak var airLabel: UILabel!
+   
     @IBOutlet weak var airStatusLabel: UILabel!
+    @IBOutlet weak var airLabel: UILabel!
+    @IBOutlet weak var airDetailLabel: UILabel!
+    
+    @IBOutlet weak var meter: GradientSlider!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -23,4 +27,5 @@ class DetailAirVcCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+   
 }
