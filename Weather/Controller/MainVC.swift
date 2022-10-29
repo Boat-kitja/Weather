@@ -64,14 +64,14 @@ extension MainVC:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
-        let test = CityDataForMainView.shared.cirysData[indexPath.row]?.firstSection?.name
-        let inDexForDetailViewToSwipe = CityDataForMainView.shared.cirysData.firstIndex(where: {$0?.firstSection?.name == test })
-        vc.indexForAllWeatherData = inDexForDetailViewToSwipe
+        let vc = storyboard?.instantiateViewController(withIdentifier: "SuperMainVC") as! SuperMainVC
+//        let test = CityDataForMainView.shared.cirysData[indexPath.row]?.firstSection?.name
+//        let inDexForDetailViewToSwipe = CityDataForMainView.shared.cirysData.firstIndex(where: {$0?.firstSection?.name == test })
+//        vc.indexForAllWeatherData = inDexForDetailViewToSwipe
         
-        print("what i want\(vc.indexForAllWeatherData)")
-        
-        print("what i want\(inDexForDetailViewToSwipe)")
+//        print("what i want\(vc.indexForAllWeatherData)")
+//        
+//        print("what i want\(inDexForDetailViewToSwipe)")
         vc.modalPresentationStyle = .fullScreen 
         self.present(vc, animated: true)
     }

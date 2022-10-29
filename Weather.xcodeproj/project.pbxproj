@@ -39,6 +39,8 @@
 		C3C7F77729092D26003C871D /* DetailVCFromSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C7F77629092D26003C871D /* DetailVCFromSearch.swift */; };
 		C3C7F77929094191003C871D /* AllWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C7F77829094191003C871D /* AllWeatherData.swift */; };
 		C3C7F77B290A7EC0003C871D /* MapVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C7F77A290A7EC0003C871D /* MapVc.swift */; };
+		C3C7F781290ACF06003C871D /* SuperMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C7F780290ACF05003C871D /* SuperMainVC.swift */; };
+		C3C7F784290ADACA003C871D /* SuperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C7F782290ADACA003C871D /* SuperCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,8 @@
 		C3C7F77629092D26003C871D /* DetailVCFromSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVCFromSearch.swift; sourceTree = "<group>"; };
 		C3C7F77829094191003C871D /* AllWeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWeatherData.swift; sourceTree = "<group>"; };
 		C3C7F77A290A7EC0003C871D /* MapVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVc.swift; sourceTree = "<group>"; };
+		C3C7F780290ACF05003C871D /* SuperMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperMainVC.swift; sourceTree = "<group>"; };
+		C3C7F782290ADACA003C871D /* SuperCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,8 @@
 		C32545E328FAE93B001C289A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C3C7F780290ACF05003C871D /* SuperMainVC.swift */,
+				C3C7F782290ADACA003C871D /* SuperCell.swift */,
 				C32545ED28FD8163001C289A /* MainVC.swift */,
 				C32545C828FA8DAB001C289A /* DetailVC.swift */,
 				C3C7F77A290A7EC0003C871D /* MapVc.swift */,
@@ -328,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3C7F76F29053CDC003C871D /* FirstTableViewCell.swift in Sources */,
+				C3C7F781290ACF06003C871D /* SuperMainVC.swift in Sources */,
 				C32545C928FA8DAB001C289A /* DetailVC.swift in Sources */,
 				C32545F128FEEDCE001C289A /* DetailVcCell.swift in Sources */,
 				C32545EA28FD7E9E001C289A /* MainVcCell.swift in Sources */,
@@ -335,6 +342,7 @@
 				C3C7F75D2903FE8F003C871D /* DetailAirVcCell.swift in Sources */,
 				C32545C528FA8DAB001C289A /* AppDelegate.swift in Sources */,
 				C32545E528FBDE37001C289A /* SetCollectionViewData.swift in Sources */,
+				C3C7F784290ADACA003C871D /* SuperCell.swift in Sources */,
 				C3C7F76029040BEC003C871D /* AirData.swift in Sources */,
 				C32545EE28FD8163001C289A /* MainVC.swift in Sources */,
 				C32545DB28FA8F02001C289A /* FirstCollectionViewCell.swift in Sources */,
