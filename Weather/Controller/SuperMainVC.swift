@@ -31,6 +31,10 @@ class SuperMainVC: UIViewController,UICollectionViewDataSource,UICollectionViewD
     let country = Country()
     var airData:[Int?] = []
     var lastCollectArray = [DetailVcModel]()
+    var setupData:AllWeatherData?
+    
+    var indexForAllWeatherData:Int!
+
    
     
     override func viewDidLoad() {
@@ -38,39 +42,36 @@ class SuperMainVC: UIViewController,UICollectionViewDataSource,UICollectionViewD
         collectionView.dataSource = self
         
        
-
+        pageControll.numberOfPages = CityDataForMainView.shared.cirysData.count
+        pageControll.currentPage = indexForAllWeatherData 
         
     }
-//    
-//    @IBAction func swipe(_ sender: UISwipeGestureRecognizer) {
-//        print("plus")
-//        if pageControll.currentPage != CityDataForMainView.shared.cirysData.count {
-//            if indexForAllWeatherData != CityDataForMainView.shared.cirysData.count - 1{
-//                indexForAllWeatherData = indexForAllWeatherData + 1
-//                pageControll.currentPage = indexForAllWeatherData
-//                setupData = CityDataForMainView.shared.cirysData[indexForAllWeatherData]
-//                print(setupData)
-//                allreloadData()
-//            }
-//            
-//        }
-//        
-//    }
     
-//    @IBAction func goBack(_ sender: Any) {
-//        self.dismiss(animated: true)
-//    }
-//
-//    @IBAction func swipeMinus(_ sender: Any) {
-//        print("minus")
-//        if pageControll.currentPage != 0 {
-//            indexForAllWeatherData = indexForAllWeatherData - 1
-//            pageControll.currentPage = indexForAllWeatherData
-//            setupData = CityDataForMainView.shared.cirysData[indexForAllWeatherData]
-//            allreloadData()
-//    }
-//    }
-//
+   
+    
+    @IBAction func goBack(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
+
+    
+    
+    @IBAction func mapPress(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MapVc") as! MapVc
+        if let setupData = setupData {
+            vc.lat = Double((setupData.firstSection?.coord.lat)!)
+            vc.lon = Double((setupData.firstSection?.coord.lon)!)
+            vc.titleText = setupData.firstSection?.name
+            vc.tempText = "\(setupData.firstSection?.main.temp!)"
+        }
+      
+        vc.modalPresentationStyle = .fullScreen
+       
+        present(vc, animated: true, completion: nil)
+    }
+    
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        

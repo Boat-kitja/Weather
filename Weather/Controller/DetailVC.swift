@@ -22,7 +22,7 @@ class DetailVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSo
     
     @IBOutlet var mainView: UIView!
     
-    @IBOutlet weak var scrollView: UIScrollView!
+     
    
     @IBOutlet weak var firstTableView: UITableView!
     @IBOutlet weak var dayTableView: UITableView!
