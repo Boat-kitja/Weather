@@ -58,7 +58,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="d8g-gT-Jke" secondAttribute="bottom" id="5FF-VO-BJm"/>
                 <constraint firstItem="d8g-gT-Jke" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Dqc-Jw-aq2"/>

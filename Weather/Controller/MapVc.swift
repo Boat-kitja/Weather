@@ -41,8 +41,11 @@ class MapVc: UIViewController,MKMapViewDelegate {
     private func myPin(){
         let pin = MKPointAnnotation()
         pin.coordinate = coordinate
-        pin.title = titleText
-        pin.subtitle = tempText
+        pin.title = titleText!
+        if let tempText = tempText{
+            pin.subtitle = tempText
+        }
+        
         map.addAnnotation(pin)
     }
     

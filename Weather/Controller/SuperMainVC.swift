@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SuperMainVC: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class SuperMainVC: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate {
     
     
 
@@ -34,17 +34,37 @@ class SuperMainVC: UIViewController,UICollectionViewDataSource,UICollectionViewD
     var setupData:AllWeatherData?
     
     var indexForAllWeatherData:Int!
+    var currentPage = 0
+    
 
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
+        collectionView.delegate = self
         
        
         pageControll.numberOfPages = CityDataForMainView.shared.cirysData.count
-        pageControll.currentPage = indexForAllWeatherData 
+        pageControll.currentPage = indexForAllWeatherData
         
+       
+        
+        print("on detailcontroller \(currentPage)")
+        
+        moveToIndexPath()
+        let indexPath = IndexPath(item: currentPage, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        collectionView.reloadData()
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        moveToIndexPath()
+        let indexPath = IndexPath(item: currentPage, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+        collectionView.reloadData()
     }
     
    
@@ -56,21 +76,38 @@ class SuperMainVC: UIViewController,UICollectionViewDataSource,UICollectionViewD
 
     
     
+    
     @IBAction func mapPress(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let vc = storyboard.instantiateViewController(withIdentifier: "MapVc") as! MapVc
         if let setupData = setupData {
             vc.lat = Double((setupData.firstSection?.coord.lat)!)
             vc.lon = Double((setupData.firstSection?.coord.lon)!)
-            vc.titleText = setupData.firstSection?.name
-            vc.tempText = "\(setupData.firstSection?.main.temp!)"
+            if let setTor = setupData.firstSection{
+                vc.titleText = setTor.name
+                vc.tempText = "\(setTor.main.temp!)°"
+            }
+           
+           
         }
       
         vc.modalPresentationStyle = .fullScreen
-       
+
         present(vc, animated: true, completion: nil)
     }
     
+
+    func moveToIndexPath(){
+       
+        let indexPath = IndexPath(item: currentPage, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        collectionView.reloadData()
+        print(indexPath)
+        
+        
+    }
+    
+   
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -90,9 +127,18 @@ class SuperMainVC: UIViewController,UICollectionViewDataSource,UICollectionViewD
        
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        pageControll.currentPage = indexPath.row
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
+    
+    
+    
+    
    
     
 

@@ -68,14 +68,14 @@
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zKi-Rm-hE4" userLabel="5day tableview">
                                                 <rect key="frame" x="10" y="177" width="627" height="335"/>
-                                                <color key="backgroundColor" white="1" alpha="0.79591783940397354" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.049539528149999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="335" id="dDX-tl-sPn"/>
                                                 </constraints>
                                             </tableView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7VM-ZH-ZcU" userLabel="air">
                                                 <rect key="frame" x="10" y="526" width="627" height="195"/>
-                                                <color key="backgroundColor" white="1" alpha="0.79591783940000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.049539528149999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="195" id="YsF-Y2-pcY"/>
                                                 </constraints>
@@ -105,7 +105,7 @@
                                             </collectionView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1QA-Om-Gug" userLabel="FIrst TableView">
                                                 <rect key="frame" x="10" y="8" width="627" height="155"/>
-                                                <color key="backgroundColor" white="1" alpha="0.79591783940000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.049539528149999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="155" id="pfS-h6-TRQ"/>
                                                 </constraints>
@@ -401,34 +401,34 @@
                                                     <rect key="frame" x="0.0" y="275" width="427" height="569"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rHy-IV-y9J" userLabel="viewInScrollView">
-                                                            <rect key="frame" x="0.0" y="0.0" width="427" height="1000"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="427" height="1097"/>
                                                             <subviews>
-                                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="c9d-XU-Y9i">
-                                                                    <rect key="frame" x="10" y="10" width="407" height="130"/>
-                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="c9d-XU-Y9i">
+                                                                    <rect key="frame" x="10" y="10" width="407" height="155"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0498240894" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="130" id="NVO-uh-Lx2"/>
+                                                                        <constraint firstAttribute="height" constant="155" id="NVO-uh-Lx2"/>
                                                                     </constraints>
                                                                 </tableView>
-                                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Lcd-ay-9wL">
-                                                                    <rect key="frame" x="10" y="150" width="407" height="300"/>
-                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Lcd-ay-9wL">
+                                                                    <rect key="frame" x="10" y="179" width="407" height="335"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.049539528145695365" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="300" id="XlU-1a-8Fs"/>
+                                                                        <constraint firstAttribute="height" constant="335" id="XlU-1a-8Fs"/>
                                                                     </constraints>
                                                                 </tableView>
-                                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AK3-lq-UQl">
-                                                                    <rect key="frame" x="10" y="460" width="407" height="110"/>
-                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AK3-lq-UQl">
+                                                                    <rect key="frame" x="10" y="528" width="407" height="195"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.049539528145695365" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="110" id="XYY-Ua-GV2"/>
+                                                                        <constraint firstAttribute="height" constant="195" id="XYY-Ua-GV2"/>
                                                                     </constraints>
                                                                 </tableView>
                                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x5L-RW-wp7">
-                                                                    <rect key="frame" x="10" y="580" width="407" height="300"/>
+                                                                    <rect key="frame" x="10" y="737" width="407" height="350"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="300" id="hMk-Ji-paz"/>
+                                                                        <constraint firstAttribute="height" constant="350" id="hMk-Ji-paz"/>
                                                                     </constraints>
                                                                     <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9Df-N4-9Nn">
                                                                         <size key="itemSize" width="128" height="128"/>
@@ -451,18 +451,17 @@
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstItem="x5L-RW-wp7" firstAttribute="leading" secondItem="rHy-IV-y9J" secondAttribute="leading" constant="10" id="1bg-KG-Yie"/>
-                                                                <constraint firstAttribute="bottom" secondItem="x5L-RW-wp7" secondAttribute="bottom" constant="120" id="6Mj-Wr-irE"/>
-                                                                <constraint firstItem="x5L-RW-wp7" firstAttribute="top" secondItem="AK3-lq-UQl" secondAttribute="bottom" constant="10" id="6kM-uC-v88"/>
+                                                                <constraint firstItem="x5L-RW-wp7" firstAttribute="top" secondItem="AK3-lq-UQl" secondAttribute="bottom" constant="14" id="6kM-uC-v88"/>
                                                                 <constraint firstAttribute="trailing" secondItem="x5L-RW-wp7" secondAttribute="trailing" constant="10" id="9iE-GR-FoT"/>
                                                                 <constraint firstItem="Lcd-ay-9wL" firstAttribute="leading" secondItem="rHy-IV-y9J" secondAttribute="leading" constant="10" id="GwQ-Q8-YNT"/>
                                                                 <constraint firstAttribute="trailing" secondItem="c9d-XU-Y9i" secondAttribute="trailing" constant="10" id="NcM-cv-qBm"/>
                                                                 <constraint firstAttribute="trailing" secondItem="AK3-lq-UQl" secondAttribute="trailing" constant="10" id="Qvy-Xa-lLq"/>
                                                                 <constraint firstItem="c9d-XU-Y9i" firstAttribute="top" secondItem="rHy-IV-y9J" secondAttribute="top" constant="10" id="Scu-8x-Pox"/>
-                                                                <constraint firstAttribute="height" constant="1000" id="XgN-dq-lRj"/>
-                                                                <constraint firstItem="AK3-lq-UQl" firstAttribute="top" secondItem="Lcd-ay-9wL" secondAttribute="bottom" constant="10" id="bxb-K8-L0F"/>
+                                                                <constraint firstAttribute="bottom" secondItem="x5L-RW-wp7" secondAttribute="bottom" constant="10" id="TpQ-KB-8jY"/>
+                                                                <constraint firstItem="AK3-lq-UQl" firstAttribute="top" secondItem="Lcd-ay-9wL" secondAttribute="bottom" constant="14" id="bxb-K8-L0F"/>
                                                                 <constraint firstItem="AK3-lq-UQl" firstAttribute="leading" secondItem="rHy-IV-y9J" secondAttribute="leading" constant="10" id="cPs-Lz-wPt"/>
                                                                 <constraint firstItem="c9d-XU-Y9i" firstAttribute="leading" secondItem="rHy-IV-y9J" secondAttribute="leading" constant="10" id="sek-fu-NQx"/>
-                                                                <constraint firstItem="Lcd-ay-9wL" firstAttribute="top" secondItem="c9d-XU-Y9i" secondAttribute="bottom" constant="10" id="yWI-3d-4xR"/>
+                                                                <constraint firstItem="Lcd-ay-9wL" firstAttribute="top" secondItem="c9d-XU-Y9i" secondAttribute="bottom" constant="14" id="yWI-3d-4xR"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Lcd-ay-9wL" secondAttribute="trailing" constant="10" id="zli-gX-lev"/>
                                                             </constraints>
                                                         </view>
@@ -652,14 +651,14 @@
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3p1-8y-2tZ" userLabel="5day tableview">
                                                 <rect key="frame" x="10" y="177" width="408" height="335"/>
-                                                <color key="backgroundColor" white="1" alpha="0.79591783940000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0498240894" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="335" id="aiC-cV-zpH"/>
                                                 </constraints>
                                             </tableView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8KL-tX-cQV" userLabel="air">
                                                 <rect key="frame" x="10" y="526" width="408" height="195"/>
-                                                <color key="backgroundColor" white="1" alpha="0.79591783940000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0498240894" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="195" id="TL5-KH-IHY"/>
                                                 </constraints>
@@ -689,7 +688,7 @@
                                             </collectionView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qgS-AP-f6p" userLabel="FIrst TableView">
                                                 <rect key="frame" x="10" y="8" width="408" height="155"/>
-                                                <color key="backgroundColor" white="1" alpha="0.79591783940000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0498240894" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="155" id="k6X-8a-AOO"/>
                                                 </constraints>
